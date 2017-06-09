@@ -23,6 +23,12 @@ namespace TheVerticalStackPanel
         public MainWindow()
         {
             InitializeComponent();
+            LayoutUpdated += MainWindow_LayoutUpdated;
+        }
+
+        private void MainWindow_LayoutUpdated(object sender, EventArgs e)
+        {
+            textBox.Text = ActualWidth.ToString();
         }
     }
 }

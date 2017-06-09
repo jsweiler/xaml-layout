@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <local:VerticalStackPanel>
-        <Button Content="Welcome"/>
+        <Button Content="Welcome" MinWidth="200" MaxWidth="400"/>
         <Button Content="to" HorizontalAlignment="Stretch"/>
-        <TextBox Text="Pluralsight"/>
+        <TextBox Text="Pluralsight" x:Name="textBox"/>
         <Button Content=":-)"/>
     </local:VerticalStackPanel>
 </Window>
