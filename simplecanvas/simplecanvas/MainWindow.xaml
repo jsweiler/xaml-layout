@@ -1,0 +1,16 @@
+﻿<Window x:Class="simplecanvas.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:simplecanvas"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <local:SimpleCanv>
+        <Button Content="tEST"/>
+        <Button Content="tESTing" local:SimpleCanv.Top="{Binding ElementName=slide, Path=Value, FallbackValue=30}"/>
+
+        <Slider local:SimpleCanv.Top="200"
+                Maximum="150" Width="200" x:Name="slide"/>
+    </local:SimpleCanv>
+</Window>
