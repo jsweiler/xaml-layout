@@ -17,7 +17,7 @@ namespace TheVerticalStackPanel
             foreach (UIElement child in this.InternalChildren)
             {
                 child.Measure(availableSize);
-                mySize.Width += child.DesiredSize.Width;
+                mySize.Width = Math.Max(mySize.Width, child.DesiredSize.Width);
                 mySize.Width += child.DesiredSize.Height;
             }
 
@@ -29,8 +29,7 @@ namespace TheVerticalStackPanel
             var location = new Point();
             foreach (UIElement child in this.InternalChildren)
             {
-                child.Arrange(new Rect(location, child.DesiredSize));
-                location.X += child.DesiredSize.Width;
+                child.Arrange(new Rect(location, new Size(finalSize.Width, child.DesiredSize.Height)));
                 location.Y += child.DesiredSize.Height;
             }
 
